@@ -3,11 +3,18 @@ import styled from 'styled-components'
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+
+
 const HeaderLogo = styled.div`
     img{
         width:100px;
         margin-left:11px;
+    }
+    a{
+        color:white;
+        text-decoration:none;
     }
 `
 
@@ -71,7 +78,9 @@ const HeaderOptionCart = styled.div`
     a{
         display:flex;
         align-items:center;
-        padding-right:9px
+        padding-right:9px;
+        color:white;
+        text-decoration: None;
     }`
 const CartCount = styled.div`
 
@@ -82,7 +91,9 @@ function Header(){
     return(
         <Container>
             <HeaderLogo>
-                <img src="src/images/Amazon.png" alt="Smszinx"/>
+                <Link  to="/">
+                    <img src="src/images/Amazon.png" alt="Smszinx"/>
+                </Link>
             </HeaderLogo>
             <HeaderOptionAddress>
                 <FmdGoodIcon/>
@@ -114,12 +125,14 @@ function Header(){
                 </HeaderOption>
 
                 
-                    <HeaderOptionCart>
-                    <Link to="/Cart">
-                        <ShoppingCartIcon/>
-                        <CartCount>4</CartCount>
+                <HeaderOptionCart>
+                    <Link to="/cart">
+                            <ShoppingCartIcon/>
+                            <CartCount>4</CartCount>
                     </Link>
-                    </HeaderOptionCart>
+                </HeaderOptionCart>
+                
+                    
                     
                 
             </HeaderNavItems>
