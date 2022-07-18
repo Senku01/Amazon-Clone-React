@@ -1,6 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import Product from './Product'
+import React, { useState,useEffect } from 'react';
+import styled from 'styled-components';
+import Product from './Product';
+import { db,auth } from './firebase';
 const Container = styled.div`
   max-width:1500px;
   margin: 0 auto;
@@ -22,6 +23,15 @@ const Content = styled.div`
 `
 
 function Home() {
+
+  const [products,setProducts] = useState([])
+
+  const getProducts = () =>{
+    db.collection('products').onSnapshot((snapshot)=>{
+      let tempProducts = [];
+      console.log(snapshot);
+    })
+  }
   return (
     <div>
       <Container>

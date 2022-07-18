@@ -11,7 +11,7 @@ const Container =styled.div`
   display:flex;
   flex-direction:column;
 `
-const Title= styled.span`
+const Title= styled.span` 
 `
 const Price= styled.span`
   font-weight:500px;
@@ -45,7 +45,22 @@ function Product() {
       <Rating>
       ⭐ ⭐ ⭐ ⭐ ⭐
       </Rating>
-        <Image src=""/>
+        <Image src="https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SL1500_.jpg"/>
+        <ActionSection>
+        <AddToCartButton>
+          Add To Cart
+        </AddToCartButton>      
+        </ActionSection>
+        <Title>
+        Macbook
+      </Title>
+      <Price>
+        $3000
+      </Price>
+      <Rating>
+      ⭐ ⭐ ⭐ ⭐ ⭐
+      </Rating>
+        <Image src="https://m.media-amazon.com/images/I/81zKcC5wJ6L._AC_SL1500_.jpg"/>
         <ActionSection>
         <AddToCartButton>
           Add To Cart
