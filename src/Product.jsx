@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import Home from './Home'
 const Container =styled.div`
   background-color:white;
   z-index:100;
@@ -18,6 +18,7 @@ const Price= styled.span`
   margin-top:3px;
 `
 const Rating= styled.div`
+  display:flex
 `
 const Image= styled.img`
   max-height:200px;
@@ -33,19 +34,25 @@ const ActionSection= styled.div`
   display:grid;
   place-items:center;
   margin-top:12px`
-function Product() {
+
+
+function Product({title, price, rating, image, id}) {
   return (
     <Container>
       <Title>
-        Ipad Pro
+        {title }
       </Title>
       <Price>
-        $4000
+          {price }
       </Price>
       <Rating>
-      ⭐ ⭐ ⭐ ⭐ ⭐
+      {//Looping the numbers of Rating that comes from DataBase
+        Array(rating)
+        .fill()
+        .map(rating => <p>⭐</p>)
+      }
       </Rating>
-        <Image src="https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SL1500_.jpg"/>
+        <Image src={ image}/>
         <ActionSection>
         <AddToCartButton>
           Add To Cart
